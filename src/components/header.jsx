@@ -25,7 +25,7 @@ const Login = (props) => {
     }
     return (
         <>
-            <div className="header-container">
+            <div className="header-section">
                 <img style={{"height": "85px"}} src='https://1000logos.net/wp-content/uploads/2020/01/UMKC-Kangaroos-Logo-2005.png'></img>
                 <span className="header-name">E-UMKC</span>
                 {user ? <span class="header-btns">
