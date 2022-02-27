@@ -10,7 +10,7 @@ export const AppContext = React.createContext({
             "type": "Electric",
             "category": "Mobile",
             "quantity": 35575,
-            "unit_price": "36999"
+            "unit_price": "999"
         },
         {
             "product_id": "PID_002",
@@ -19,7 +19,7 @@ export const AppContext = React.createContext({
             "type": "Electric",
             "category": "Laptop",
             "quantity": 3250,
-            "unit_price": "59999"
+            "unit_price": "599"
         },
         {
             "product_id": "PID_003",
@@ -28,7 +28,7 @@ export const AppContext = React.createContext({
             "type": "Electric",
             "category": "Laptop",
             "quantity": 2250,
-            "unit_price": "68999"
+            "unit_price": "689"
         },
         {
             "product_id": "PID_004",
@@ -37,7 +37,7 @@ export const AppContext = React.createContext({
             "type": "Electric",
             "category": "Mobile",
             "quantity": 66250,
-            "unit_price": "92999"
+            "unit_price": "929"
         },
         {
             "product_id": "PID_005",
@@ -46,7 +46,7 @@ export const AppContext = React.createContext({
             "type": "Electric",
             "category": "Mobile",
             "quantity": 22550,
-            "unit_price": "48999"
+            "unit_price": "489"
         },
 
     ],
