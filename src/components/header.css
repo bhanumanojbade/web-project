@@ -1,6 +1,7 @@
 .header-section{
     height: 10%;
-    background: #252121;
+    /*background: #252121; */
+    background: lightskyblue;
     display: flex;
     align-items: center;
  /* justify-content: space-between; */

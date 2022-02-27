@@ -1,5 +1,6 @@
 .login-container{
-   background-color:#e0eacc;
+   /*background-color:#e0eacc; */
+   background-color: white;
    height: 100%;
    display: flex;
    align-items: center;
