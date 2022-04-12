@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { AppContext } from '../../contexts/AppContext';
 import "./Login.css";
 import Alert from '@material-ui/lab/Alert';
+import axios from 'axios';
 
 const Login = (props) => {
     const history = useHistory();
@@ -13,17 +14,33 @@ const Login = (props) => {
 
     const onLogin = (e) => {
         if (e.target.email.value == "" || e.target.password.value == "") {
-            setToast(true);
-            setToastTxt("Feilds cannot be empty")
-        } else if (e.target.email.value == "testing" && e.target.password.value == "testing") {
-            setUser("test.com");
-            history.push('productList');
+          setToast(true);
+          setToastTxt("Feilds cannot be empty");
         } else {
-            setToast(true);
-            setToastTxt("Invalid input")
+          axios
+            .post("https://umkc-final-project.herokuapp.com/login", {
+              userName: e.target.email.value,
+              password: e.target.password.value,
+            })
+            .then((response) => {
+              console.log("user", response);
+              if (response.data.status == 200) {
+                localStorage.setItem('user', JSON.stringify(response.data));
+                setUser(response.data);
+                history.push("productList");
+              } else {
+                setToast(true);
+                setToastTxt("User not found");
+              }
+            })
+            .catch((e) => {
+              setToast(true);
+              setToastTxt("Invalid input");
+            });
         }
         e.preventDefault();
-    }
+      };
+  
     return (
         <>
             {enableToat ? <Alert variant="filled" severity="error">
