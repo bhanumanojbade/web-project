@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
 import { AppContext } from '../../contexts/AppContext';
 import LoadingOverlay from 'react-loading-overlay';
+import Paypal from '../../components/paypal'
 
 //import { AppContext } from '../contexts/AppContext';
 
@@ -60,7 +61,8 @@ function CheckOut(props) {
                         <span>${totalAmount + 150}</span>
                     </div>
                     <div style={{ "textAlign": "center" }}>
-                        <Button onClick={e => placeOrder()} variant="contained" color="primary" type="submit">Place your order</Button>
+                        {/* <Button onClick={e => placeOrder()} variant="contained" color="primary" type="submit">Place your order</Button> */}
+                       <Paypal placeOrder={placeOrder}/>
                     </div>
                 </div>
             </div>

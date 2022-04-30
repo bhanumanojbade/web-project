@@ -3,12 +3,21 @@ import './ProductList.css';
 import ProductCard from '../../components/Product-card.jsx';
 import { AppContext } from '../../contexts/AppContext';
 import { Button, TextField } from '@material-ui/core';
+import axios from 'axios';
 
 function ProductList() {
     const { productList } = useContext(AppContext);
-    const [filteredItems, setFilteredItems] = useState(productList)
+    const [filteredItems, setFilteredItems] = useState([])
     useEffect(() => {
-
+        axios
+        .get("https://umkc-final-project.herokuapp.com/products")
+        .then((response) => {
+            console.log("res",response)
+            setFilteredItems(response.data)
+        })
+        .catch((err)=>{
+          console.log("err",err)
+        })
     }, []);
     const Search = (e) => {
         // console.log("ee", e.currentTarget.value)
